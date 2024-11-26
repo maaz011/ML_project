@@ -13,6 +13,7 @@
 10. [Removing Outliers](#removing-outliers)
 11. [Model Selection](#model-selection)
 12. [Model Training](#model-training)
+13. [User interface](#UserInterface )
 
 ## 1. Problem Statement
 
@@ -93,14 +94,6 @@ EDA helps uncover insights and relationships between various attributes. Here’
 
 Outliers in the dataset, especially in columns like `Selling Price` and `Kilometers Driven`, were removed using the Interquartile Range (IQR) method. This ensured that extreme data points did not distort the model training.
 
-### Code for removing outliers:
-
-```python
-Q1 = df.quantile(0.25)
-Q3 = df.quantile(0.75)
-IQR = Q3 - Q1
-df_filtered = df[~((df < (Q1 - 1.5 * IQR)) | (df > (Q3 + 1.5 * IQR))).any(axis=1)]
-```
 
 ## 11. Model Selection and Model Training
 
@@ -120,6 +113,7 @@ Used techniques like grid search to tune the model parameters and optimize perfo
 ---
 
 This README provides a comprehensive overview of the used car price prediction project. It includes the project's problem statement, methodology, data preprocessing steps, model selection, and training process, as well as the tools used and functional requirements of the web application.
+
 # # User Interface (UI)
 The User Interface (UI) of this application is designed to be simple, clean, and user-friendly. The interface is built using HTML, CSS, and the Bootstrap framework to ensure it is responsive and visually appealing across all devices.
 Landing Page: The landing page provides an introduction to the project and includes a button that directs users to the prediction form.
