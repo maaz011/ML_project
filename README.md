@@ -1,7 +1,8 @@
 
 # # USED CAR PRICE PREDICTION
 
-#PROBLEM STATEMENT 
+#PROBLEM STATEMENT
+
 Most people waste their time inquiring about the expected car price in and around their friend’s 
 circle and their associates manually. Even some websites can predict the price but it is not very 
 accurate due to the unavailability of feature data and Specifying them as the NULL value in the 
