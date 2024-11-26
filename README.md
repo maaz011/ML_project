@@ -10,13 +10,14 @@ dataset or just dropping the feature column. With this project, in no time peopl
 website and insert their requirements, and can get a predicted price of the car. Indeed, people 
 who have very little technical knowledge can be able to reach the site. 
 
-1. Table of Contents
+# Table of Contents
 2. Project Overview
 3. Installation
 4. Technologies Used
 5. Features
 6. Usage
 7. Model Selection & Training
+8. User Interface (UI)
 
 # Project Overview
 This project is structured into two main components:
@@ -51,7 +52,8 @@ Machine Learning: Scikit-learn (including Lasso, Linear Regression, Decision Tre
 Frontend: HTML, CSS, Bootstrap for styling the web interface
 Data Analysis: Pandas for data manipulation, NumPy for numerical computations, Matplotlib and Seaborn for visualizations
 Dataset: The model is trained using a dataset of used car listings, cars_details.csv, sourced from Kaggle.
-Features
+# Features
+
 Car Price Prediction: Users can input specific details of a used car, including make, model, year, mileage, fuel type, and more, and the app will predict the car’s price.
 
 Multiple Machine Learning Models: The system uses multiple regression models to predict prices, giving a reliable output by comparing results from different models.
@@ -70,7 +72,8 @@ Fuel type (Petrol, Diesel, etc.)
 Transmission type (Manual or Automatic)
 Get the Prediction: After submitting the form, the predicted car price will appear on the screen.
 
-Model Selection & Training
+# Model Selection & Training
+
 This project uses several machine learning algorithms to predict the price of used cars:
 
 Linear Regression: A simple linear approach that predicts the price based on the linear relationship between car features.
