@@ -1,91 +1,125 @@
 
-# # USED CAR PRICE PREDICTION
+# USED CAR PRICE PREDICTION
+## Table of Contents
+1. [Problem Statement](#problem-statement)
+2. [Project Overview](#project-overview)
+3. [Objectives](#objectives)
+4. [Design and Analysis](#design-and-analysis)
+5. [Functional Requirements](#functional-requirements)
+6. [Methodology](#methodology)
+7. [Tools Used](#tools-used)
+8. [Implementation: Dataset and Preprocessing](#implementation-dataset-and-preprocessing)
+9. [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
+10. [Removing Outliers](#removing-outliers)
+11. [Model Selection](#model-selection)
+12. [Model Training](#model-training)
 
-#PROBLEM STATEMENT
+## 1. Problem Statement
 
-Most people waste their time inquiring about the expected car price in and around their friend’s 
-circle and their associates manually. Even some websites can predict the price but it is not very 
-accurate due to the unavailability of feature data and Specifying them as the NULL value in the 
-dataset or just dropping the feature column. With this project, in no time people can access the 
-website and insert their requirements, and can get a predicted price of the car. Indeed, people 
-who have very little technical knowledge can be able to reach the site. 
+Most people waste time manually inquiring about the expected car prices within their social circles or using websites that provide price predictions. However, these predictions often lack accuracy due to missing data or incomplete feature specifications. The goal of this project is to provide a quick and accurate used car price prediction tool. Users can enter the car details, and in return, they will receive an estimated price. This application is designed to be user-friendly, requiring little technical knowledge.
 
-# Table of Contents
-2. Project Overview
-3. Installation
-4. Technologies Used
-5. Features
-6. Usage
-7. Model Selection & Training
-8. User Interface (UI)
+## 2. Project Overview
 
-# Project Overview
-This project is structured into two main components:
+This project uses machine learning techniques to predict the price of a used car based on various attributes such as car make, model, year of manufacture, mileage, condition, and more. The backend of the project is built using **Flask** for creating the web application, while **Jupyter Notebook** is used to develop and train the machine learning models. We will also use **Pickle** to serialize and load the trained models for deployment. The frontend utilizes **HTML** and **CSS** to structure and style the web page, while **JSON** is used for data exchange between the client and server.
 
-Backend (Machine Learning Model): A regression-based model that predicts used car prices. The model uses popular machine learning algorithms like Linear Regression, Decision Tree, Random Forest, and Lasso Regression to predict the price based on input features.
+## 3. Objectives
 
-Frontend (Web Interface): A Flask-based web application that allows users to input car details and receive a price prediction. The interface is built to be simple and easy to use, guiding users through the process of inputting necessary car attributes.
+- **Data Preprocessing**: Clean and prepare data to be suitable for modeling.
+- **Exploratory Data Analysis (EDA)**: Understand the distribution and relationships of data points.
+- **Modeling**: Implement various machine learning regression models such as Lasso, Linear Regression, Decision Tree, and Random Forest to predict used car prices.
+- **Web Deployment**: Integrate the trained model into a web-based application using Flask and Pickle for serialization.
+  
+## 4. Design and Analysis
 
-# Installation
-Prerequisites
+The design phase focuses on fulfilling critical project requirements such as functional, data, usability, and aesthetic aspects. By meeting these requirements, we ensure that the end-users find the application accessible and comfortable. The project design outlines how the features and functionalities will align to meet the goal of providing a reliable used car price prediction tool.
 
-Python 3.x
-Anaconda (for dependency management)
-# Steps to Install
- 1. Clone the Repository:
-   git clone https://github.com/your-username/used-car-price-prediction.git cd used-car-price-prediction
+### Key Design Components:
+- **User Interface (UI)**: Clean, minimalistic, and easy-to-use interface for inputting car details.
+- **Model**: A robust machine learning model that can predict car prices based on various features.
+- **Scalability**: The model will handle multiple requests from users and provide quick responses.
 
- 2. Set Up a Virtual Environment: Create and activate a virtual environment to manage dependencies:
-   conda create --name car-price-prediction python=3.8
-   conda activate car-price-prediction
- 3. Install Required Libraries: Install the necessary Python packages by running:
-   pip install -r requirements.txt
- 4. Run the Application: Start the Flask web application:
-   python app.py
-Now, you can access the application through your browser at http://127.0.0.1:5000/.
+## 5. Functional Requirements
 
-# Technologies Used
-This project utilizes several key technologies:
+The application allows users to:
+- Enter car details (e.g., car price in lakhs, transmission type, fuel type, year of manufacture).
+- Receive a predicted car price based on the entered attributes.
+- Make repeated predictions without interference.
+- The web application ensures that the user can input and modify car attributes and see predictions instantly.
 
-Backend: Python, Flask
-Machine Learning: Scikit-learn (including Lasso, Linear Regression, Decision Tree, Random Forest Regressors)
-Frontend: HTML, CSS, Bootstrap for styling the web interface
-Data Analysis: Pandas for data manipulation, NumPy for numerical computations, Matplotlib and Seaborn for visualizations
-Dataset: The model is trained using a dataset of used car listings, cars_details.csv, sourced from Kaggle.
-# Features
+## 6. Methodology
 
-Car Price Prediction: Users can input specific details of a used car, including make, model, year, mileage, fuel type, and more, and the app will predict the car’s price.
+The methodology is based on several key steps to ensure that the used car price prediction model is effective and scalable:
 
-Multiple Machine Learning Models: The system uses multiple regression models to predict prices, giving a reliable output by comparing results from different models.
+1. **Data Collection**: Gather car-related data from online sources like Kaggle, focusing on attributes such as car make, model, year, mileage, price, etc.
+2. **Data Preprocessing**: Clean the dataset by handling missing values, encoding categorical variables, and scaling numerical features.
+3. **Exploratory Data Analysis (EDA)**: Visualize and explore relationships in the dataset to understand patterns and outliers.
+4. **Feature Engineering**: Create new features or transform existing ones to improve the model’s predictive power.
+5. **Model Selection**: Choose and implement appropriate machine learning models.
+6. **Model Training and Evaluation**: Train the models on the training data, evaluate them on testing data, and choose the best model based on performance metrics.
+7. **Deployment**: Deploy the best-performing model into a web-based application using Flask.
 
-Simple Web Interface: The user interface is built using Flask, HTML, and Bootstrap, making it easy for users to interact with the app and get quick results.
+## 7. Tools Used
 
-Real-time Results: As soon as the user submits the car details, the predicted price is displayed instantly.
+- **Anaconda**: Python distribution for scientific computing, used for managing environments and libraries.
+- **Jupyter Notebook**: Interactive coding environment for developing and testing machine learning models.
+- **Flask**: Web framework used for creating the backend of the application.
+- **Pickle**: Serialization library to save and load machine learning models.
+- **HTML & CSS**: For frontend development to create the structure and styling of the web application.
+- **JSON**: For data exchange between server and client.
 
+## 8. Implementation: Dataset and Preprocessing
 
-Input Car Details: In the input form, fill in the required car attributes, such as:
-Make
-Model
-Year of manufacture
-Mileage
-Fuel type (Petrol, Diesel, etc.)
-Transmission type (Manual or Automatic)
-Get the Prediction: After submitting the form, the predicted car price will appear on the screen.
+The dataset used for this project is a collection of used car data available from Kaggle. The dataset includes multiple features such as:
+- Make, model, year of manufacture
+- Fuel type, transmission type
+- Kilometers driven, owner details
+- Price and other specifications
 
-# Model Selection & Training
+### Preprocessing Steps:
+- Removed irrelevant columns (e.g., seller).
+- Checked for and handled missing values.
+- Converted categorical data into numerical format using encoding techniques.
+- Normalized numerical features to make them comparable.
+- Added new features like `selling_price_inr` for better price prediction.
 
-This project uses several machine learning algorithms to predict the price of used cars:
+## 9. Exploratory Data Analysis (EDA)
 
-Linear Regression: A simple linear approach that predicts the price based on the linear relationship between car features.
+EDA helps uncover insights and relationships between various attributes. Here’s what was performed during this phase:
+- **Visualizations**: Used plots like pair plots and histograms to understand distributions.
+- **Comparisons**: Analyzed manual vs automatic cars, and how various attributes (e.g., transmission type) affected the price.
+- **Outlier Detection**: Identified and visualized outliers in key columns like selling price and kilometers driven.
 
-Decision Tree Regression: A non-linear regression method that splits data into subsets based on decision rules, making it useful for complex relationships between features.
+## 10. Removing Outliers
 
-Random Forest Regression: An ensemble method that uses multiple decision trees to improve accuracy and reduce overfitting. It is particularly robust in real-world data.
+Outliers in the dataset, especially in columns like `Selling Price` and `Kilometers Driven`, were removed using the Interquartile Range (IQR) method. This ensured that extreme data points did not distort the model training.
 
-Lasso Regression: A linear regression technique that uses L1 regularization to handle high-dimensional data and avoid overfitting,
-and other models also.
+### Code for removing outliers:
 
-The model is trained on a dataset of used cars with various features. It is evaluated using standard metrics like Mean Squared Error (MSE) and R-squared to measure prediction accuracy.
+```python
+Q1 = df.quantile(0.25)
+Q3 = df.quantile(0.75)
+IQR = Q3 - Q1
+df_filtered = df[~((df < (Q1 - 1.5 * IQR)) | (df > (Q3 + 1.5 * IQR))).any(axis=1)]
+```
+
+## 11. Model Selection and Model Training
+
+### Machine Learning Models:
+- **Linear Regression**: A basic regression model to understand the relationship between the car features and selling price.
+- **Decision Tree Regressor**: A tree-based model to predict the price based on feature splits.
+- **Random Forest Regressor**: An ensemble of decision trees that improves prediction accuracy by combining multiple trees.
+
+### Model Training:
+- The dataset was split into training and testing sets.
+- Trained the models using the training set (`x_train`, `y_train`).
+- Evaluated the models using the testing set (`x_test`, `y_test`), measuring accuracy with metrics like Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE).
+  
+### Hyperparameter Tuning:
+Used techniques like grid search to tune the model parameters and optimize performance.
+
+---
+
+This README provides a comprehensive overview of the used car price prediction project. It includes the project's problem statement, methodology, data preprocessing steps, model selection, and training process, as well as the tools used and functional requirements of the web application.
 # # User Interface (UI)
 The User Interface (UI) of this application is designed to be simple, clean, and user-friendly. The interface is built using HTML, CSS, and the Bootstrap framework to ensure it is responsive and visually appealing across all devices.
 Landing Page: The landing page provides an introduction to the project and includes a button that directs users to the prediction form.
