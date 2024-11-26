@@ -1,6 +1,13 @@
-# # end to end machine learning project
-# # Used Car Price Prediction
-This project aims to predict the price of used cars based on several features such as make, model, year, mileage, transmission type, and fuel type. By training machine learning models on a dataset, this project helps estimate the price of a used car when provided with relevant details. Additionally, it provides a user-friendly web interface to input the car details and get a predicted price.
+
+# # USED CAR PRICE PREDICTION
+
+#PROBLEM STATEMENT 
+Most people waste their time inquiring about the expected car price in and around their friend’s 
+circle and their associates manually. Even some websites can predict the price but it is not very 
+accurate due to the unavailability of feature data and Specifying them as the NULL value in the 
+dataset or just dropping the feature column. With this project, in no time people can access the 
+website and insert their requirements, and can get a predicted price of the car. Indeed, people 
+who have very little technical knowledge can be able to reach the site. 
 
 1. Table of Contents
 2. Project Overview
@@ -19,29 +26,30 @@ Frontend (Web Interface): A Flask-based web application that allows users to inp
 
 # Installation
 Prerequisites
+
 Python 3.x
 Anaconda (for dependency management)
-Steps to Install
-Clone the Repository: git clone https://github.com/your-username/used-car-price-prediction.git
-cd used-car-price-prediction
+# Steps to Install
+ 1. Clone the Repository:
+   git clone https://github.com/your-username/used-car-price-prediction.git cd used-car-price-prediction
 
-Set Up a Virtual Environment: Create and activate a virtual environment to manage dependencies:
-conda create --name car-price-prediction python=3.8
-conda activate car-price-prediction
-Install Required Libraries: Install the necessary Python packages by running:
-pip install -r requirements.txt
-Run the Application: Start the Flask web application:
-python app.py
+ 2. Set Up a Virtual Environment: Create and activate a virtual environment to manage dependencies:
+   conda create --name car-price-prediction python=3.8
+   conda activate car-price-prediction
+ 3. Install Required Libraries: Install the necessary Python packages by running:
+   pip install -r requirements.txt
+ 4. Run the Application: Start the Flask web application:
+   python app.py
 Now, you can access the application through your browser at http://127.0.0.1:5000/.
 
-Technologies Used
+# Technologies Used
 This project utilizes several key technologies:
 
 Backend: Python, Flask
 Machine Learning: Scikit-learn (including Lasso, Linear Regression, Decision Tree, Random Forest Regressors)
 Frontend: HTML, CSS, Bootstrap for styling the web interface
 Data Analysis: Pandas for data manipulation, NumPy for numerical computations, Matplotlib and Seaborn for visualizations
-Dataset: The model is trained using a dataset of used car listings, cars-dataset.csv, sourced from Kaggle.
+Dataset: The model is trained using a dataset of used car listings, cars_details.csv, sourced from Kaggle.
 Features
 Car Price Prediction: Users can input specific details of a used car, including make, model, year, mileage, fuel type, and more, and the app will predict the car’s price.
 
